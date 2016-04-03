@@ -16,6 +16,10 @@ $ZSH/homebrew/install.sh 2>&1
 echo "› brew update"
 brew update
 
+# Upgrade homebrew
+echo "› antigen update"
+antigen update
+
 # Install software
 echo "› $ZSH/script/install"
 $ZSH/script/install

@@ -9,8 +9,8 @@ brew 'caskroom/cask/brew-cask'
 
 brew 'ack'
 brew 'ansible'
-brew 'bash'
-brew 'bash-completion'
+# zsh plugin manager
+brew 'antigen'
 brew 'bazaar'
 brew 'bison'
 brew 'coreutils'
