@@ -57,6 +57,8 @@ brew 'unrar'
 brew 'watch'
 brew 'wget'
 brew 'youtube-dl'
+brew 'zsh'
+brew 'zsh-completions'
 
 cask '1password'
 cask 'adium'
