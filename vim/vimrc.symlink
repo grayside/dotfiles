@@ -2,3 +2,45 @@ syntax on
 
 " Wrap gitcommit file types at the appropriate length
 filetype indent plugin on
+
+" Local dirs
+if !has('win32')
+  set backupdir=$DOTFILES/caches/vim
+  set directory=$DOTFILES/caches/vim
+  set undodir=$DOTFILES/caches/vim
+  let g:netrw_home = expand('$DOTFILES/caches/vim')
+endif
+
+" Make it obvious where 80 characters is
+set textwidth=80
+
+" Indentation
+set autoindent " Copy indent from last line when starting new line.
+set shiftwidth=2 " The # of spaces for indenting.
+set smarttab " At start of line, <Tab> inserts shiftwidth spaces, <Bs> deletes shiftwidth spaces.
+set softtabstop=2 " Tab key results in 2 spaces
+set tabstop=2 " Tabs indent only 2 spaces
+set expandtab " Expand tabs to spaces
+
+" Reformatting
+set nojoinspaces " Only insert single space after a '.', '?' and '!' with a join command.
+
+" Ignore things
+set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js
+set wildignore+=*/bower_components/*,*/node_modules/*
+set wildignore+=*/vendor/*,*/.git/*,*/.hg/*,*/.svn/*,*/log/*,*/tmp/*
+
+" Splits
+set splitbelow " New split goes below
+set splitright " New split goes right
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+
+" When editing a file, always jump to the last known cursor position. Don't do
+" it for commit messages, when the position is invalid, or when inside an event
+" handler (happens when dropping a file on gvim).
+autocmd vimrc BufReadPost *
+  \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal g`\"" |
+  \ endif
