@@ -17,15 +17,20 @@ augroup vimrc
   autocmd!
 augroup END
 
+" THEME/COLORS
+
 " Make invisible chars less visible in terminal.
-autocmd vimrc ColorScheme * :hi NonText ctermfg=236
-autocmd vimrc ColorScheme * :hi SpecialKey ctermfg=236
+"autocmd vimrc ColorScheme * :hi NonText ctermfg=236
+"autocmd vimrc ColorScheme * :hi SpecialKey ctermfg=236
 " Show trailing whitespace.
 autocmd vimrc ColorScheme * :hi ExtraWhitespace ctermbg=red guibg=red
 " Make selection more visible.
 autocmd vimrc ColorScheme * :hi Visual guibg=#00588A
 autocmd vimrc ColorScheme * :hi link multiple_cursors_cursor Search
 autocmd vimrc ColorScheme * :hi link multiple_cursors_visual Visual
+
+set background=dark
+colorscheme solarized
 
 " Visual settings
 set cursorline " Highlight current line
@@ -113,30 +118,91 @@ autocmd vimrc BufRead .vimrc,*.vim set keywordprg=:help
 " markdown
 autocmd vimrc BufRead,BufNewFile *.md set filetype=markdown
 
+" PLUGINS
+
+" NERDTree
+let NERDTreeShowHidden = 1
+let NERDTreeMouseMode = 2
+map <leader>n :NERDTreeToggle<CR>
+autocmd vimrc StdinReadPre * let s:std_in=1
+" If no file or directory arguments are specified, open NERDtree.
+" If a directory is specified as the only argument, open it in NERDTree.
+autocmd vimrc VimEnter *
+  \ if argc() == 0 && !exists("s:std_in") |
+  \   NERDTree |
+  \ elseif argc() == 1 && isdirectory(argv(0)) |
+  \   bd |
+  \   exec 'cd' fnameescape(argv(0)) |
+  \   NERDTree |
+  \ end
+
+" CtrlP.vim
+map <leader>p <C-P>
+map <leader>r :CtrlPMRUFiles<CR>
+"let g:ctrlp_match_window_bottom = 0 " Show at top of window
+
+" Indent Guides
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+
+" Mustache/handlebars
+let g:mustache_abbreviations = 1
+
 " https://github.com/junegunn/vim-plug
 " Reload .vimrc and :PlugInstall to install plugins.
-"call plug#begin('~/.vim/plugged')
-"Plug 'bling/vim-airline'
-"Plug 'tpope/vim-sensible'
-"Plug 'tpope/vim-surround'
-"Plug 'tpope/vim-fugitive'
-"Plug 'tpope/vim-vinegar'
-"Plug 'tpope/vim-repeat'
-"Plug 'tpope/vim-commentary'
+call plug#begin('~/.vim/plugged')
+" Tailors the statusbar. https://github.com/vim-airline/vim-airline
+Plug 'vim-airline/vim-airline'
+" Sensible defaults loaded late in configuration. https://github.com/tpope/vim-sensible
+Plug 'tpope/vim-sensible'
+" Adds command keys to easily add, edit, or removing bracketing content. https://github.com/tpope/vim-surround
+Plug 'tpope/vim-surround'
+" Git wrapper. https://github.com/tpope/vim-fugitive
+Plug 'tpope/vim-fugitive'
+" Streamlined navigation to navigation. https://github.com/tpope/vim-vinegar
+Plug 'tpope/vim-vinegar'
+" Fix limitations of the '.' command inside a plugin map. https://github.com/tpope/vim-repeat
+Plug 'tpope/vim-repeat'
+" Toggle comments on or off. https://github.com/tpope/vim-commentary
+Plug 'tpope/vim-commentary'
+" [Uninstalled] Miscellaneous pairs of command mappings. https://github.com/tpope/vim-unimpaired
 "Plug 'tpope/vim-unimpaired'
+" [Uninstalled] Mappings to unix CLI options like chmod, mkdir, etc. https://github.com/tpope/vim-eunuch
 "Plug 'tpope/vim-eunuch'
+" Nice navigable & configurable directory UI for filesystem. https://github.com/scrooloose/nerdtree
 "Plug 'scrooloose/nerdtree'
-"Plug 'ctrlpvim/ctrlp.vim'
-"Plug 'fatih/vim-go', {'for': 'go'}
+" Git status integration with NERDtree. https://github.com/Xuyuanp/nerdtree-git-plugin
+Plug 'Xuyuanp/nerdtree-git-plugin'
+" File search utility with biases towards recently used, and other power tools. https://github.com/ctrlpvim/ctrlp.vim
+Plug 'ctrlpvim/ctrlp.vim'
+" Make vim a decent golang IDE. https://github.com/fatih/vim-go
+Plug 'fatih/vim-go', {'for': 'go'}
+" Zebra stripe indentation columns. https://github.com/nathanaelkane/vim-indent-guides
 "Plug 'nathanaelkane/vim-indent-guides'
+" JS enhancements, mostly syntax highlighting and folding. https://github.com/pangloss/vim-javascript
 "Plug 'pangloss/vim-javascript', {'for': 'javascript'}
+" [Uninstalled] VCS indicators in gutter for many version control systems.
 "Plug 'mhinz/vim-signify'
-"Plug 'mattn/emmet-vim'
-"Plug 'mustache/vim-mustache-handlebars'
-"Plug 'chase/vim-ansible-yaml'
-"Plug 'wavded/vim-stylus'
-"Plug 'klen/python-mode', {'for': 'python'}
-"Plug 'terryma/vim-multiple-cursors'
-"Plug 'wting/rust.vim', {'for': 'rust'}
-"Plug 'http://git.drupal.org/project/vimrc.git', { 'branch': '7.x-1.x', 'rtp': 'bundle/vim-plugin-for-drupal' }
-"call plug#end()
+" Enhanced Git indicators in gutter. https://github.com/airblade/vim-gitgutter
+Plug 'airblade/vim-gitgutter'
+" Snippet library system. https://github.com/mattn/emmet-vim
+Plug 'mattn/emmet-vim'
+" Mustache & Handlebars template support. https://github.com/mustache/vim-mustache-handlebars
+Plug 'mustache/vim-mustache-handlebars'
+" Ansible syntax highlighting. https://github.com/pearofducks/ansible-vim
+Plug 'pearofducks/ansible-vim'
+" CSS/HTML syntax highlighting. https://github.com/wavded/vim-stylus
+Plug 'wavded/vim-stylus'
+" Sublime-style multi-cursors. https://github.com/terryma/vim-multiple-cursors
+Plug 'terryma/vim-multiple-cursors'
+" Rust syntax highlighting and wrangling. https://github.com/rust-lang/rust.vim
+Plug 'rust-lang/rust.vim', {'for': 'rust'}
+" CSV format support. https://github.com/chrisbra/csv.vim
+Plug 'chrisbra/csv.vim'
+" Dockerfile. https://github.com/ekalinin/Dockerfile.vim
+Plug 'ekalinin/Dockerfile.vim'
+" Drupal support. https://www.drupal.org/project/vimrc
+Plug 'http://git.drupal.org/project/vimrc.git', { 'branch': '7.x-1.x', 'rtp': 'bundle/vim-plugin-for-drupal' }
+" Solarized colorscheme. https://github.com/altercation/vim-colors-solarized
+Plu 'altercation/vim-colors-solarized'
+call plug#end()
