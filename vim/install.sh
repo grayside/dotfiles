@@ -1,5 +1,5 @@
 # Backups, swaps and undos are stored here.
-mkdir -p $DOTFILES/caches/vim
+mkdir -p $ZSH/caches/vim
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
