@@ -11,6 +11,8 @@ brew 'ack'
 brew 'ansible'
 # zsh plugin manager
 brew 'antigen'
+brew 'bash'
+brew 'bash-completions'
 brew 'bazaar'
 brew 'bison'
 brew 'coreutils'
