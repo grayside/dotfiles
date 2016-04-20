@@ -96,7 +96,6 @@ cask 'virtualbox'
 cask 'vlc'
 
 # Productivity
-cask 'todoist'
 cask 'alfred'
 
 # Quick Look plugins
