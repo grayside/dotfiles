@@ -90,6 +90,7 @@
   whitespace = blank-at-eol,blank-at-eof,trailing-space,tab-in-indent
   excludesfile = ~/.gitignore
   safecrlf = false
+  editor = vim
 [diff]
   renames = copies
   algorithm = patience
