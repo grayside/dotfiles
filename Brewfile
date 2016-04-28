@@ -5,6 +5,7 @@ tap 'homebrew/binary'
 tap 'homebrew/bundle'
 tap 'homebrew/core'
 tap 'homebrew/dupes'
+tap 'caskroom/fonts'
 brew 'caskroom/cask/brew-cask'
 
 brew 'ack'
@@ -113,6 +114,20 @@ cask 'webpquicklook'
 # Color pickers
 cask 'colorpicker-developer'
 cask 'colorpicker-skalacolor'
+
+# Fonts
+cask 'font-droid-sans'
+cask 'font-droid-sans-mono'
+cask 'font-inconsolata'
+cask 'font-liberation-mono'
+cask 'font-liberation-sans'
+cask 'font-meslo-lg'
+cask 'font-nixie-one'
+cask 'font-pt-mono'
+cask 'font-roboto'
+cask 'font-source-code-pro'
+cask 'font-source-sans-pro'
+cask 'font-ubuntu'
 
 # Phase2
 tap 'phase2/devtools'
