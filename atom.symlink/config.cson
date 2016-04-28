@@ -25,7 +25,7 @@
     showIndentGuide: true
     softWrapAtPreferredLineLength: true
   "go-plus":
-    goPath: "/Users/holman/Code/go"
+    goPath: "/Users/aross/Projects/go"
   "release-notes":
     viewedVersion: "0.89.0"
   "spell-check":
