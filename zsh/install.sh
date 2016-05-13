@@ -16,8 +16,13 @@ if [[ "$(dscl . -read ~ UserShell | awk '{print $2}')" != "$binroot/zsh" ]]; the
   echo "› Please exit and restart all your shells."
 fi
 
+if [[ "$SHELL" == "$binroot/zsh"]]; then
+# Ensure antigen is available.
+source $(brew --prefix)/share/antigen.zsh
+
 # Install zsh plugins
 antigen bundles <<EOBUNDLES
   # Guess what to install when running an unknown command.
   command-not-found
 EOBUNDLES
+fi
