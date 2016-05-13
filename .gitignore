@@ -7,4 +7,7 @@ atom/atom.symlink/packages
 atom/atom.symlink/storage
 atom/atom.symlink/themes
 
+vim/vim.symlink/autoload/
+vim/vim.symlink/plugged/
+
 git/gitconfig.local.symlink
