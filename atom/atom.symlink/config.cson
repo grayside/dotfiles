@@ -19,13 +19,24 @@
       "unity-ui"
       "glacier-syntax"
     ]
+  drupal:
+    fileTypesPhp: "module,install,inc,test"
   editor:
     fontFamily: "Menlo"
+    fontSize: 18
     invisibles: {}
     showIndentGuide: true
     softWrapAtPreferredLineLength: true
   "go-plus":
     goPath: "/Users/aross/Projects/go"
+  minimap:
+    plugins:
+      bookmarks: true
+      bookmarksDecorationsZIndex: 0
+      cursorline: true
+      cursorlineDecorationsZIndex: 0
+      "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
   "release-notes":
     viewedVersion: "0.89.0"
   "spell-check":
