@@ -24,5 +24,6 @@ source $(brew --prefix)/share/antigen.zsh
 antigen bundles <<EOBUNDLES
   # Guess what to install when running an unknown command.
   command-not-found
+  zsh-users/zsh-syntax-highlighting
 EOBUNDLES
 fi
