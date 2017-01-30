@@ -15,6 +15,7 @@
       "tmp"
       "vendor"
     ]
+    telemetryConsent: "no"
     themes: [
       "unity-ui"
       "glacier-syntax"
@@ -37,6 +38,9 @@
       cursorlineDecorationsZIndex: 0
       "find-and-replace": true
       "find-and-replaceDecorationsZIndex": 0
+    panelDisplayMode: "closed"
+  "linter-eslint":
+    useGlobalEslint: true
   "release-notes":
     viewedVersion: "0.89.0"
   "spell-check":
