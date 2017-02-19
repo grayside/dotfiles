@@ -1,4 +1,7 @@
 "*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "291d6c3d-08e8-4bdc-92a4-708372376173"
   core:
     disabledPackages: [
       "background-tips"
@@ -15,7 +18,7 @@
       "tmp"
       "vendor"
     ]
-    telemetryConsent: "no"
+    telemetryConsent: "limited"
     themes: [
       "unity-ui"
       "glacier-syntax"
@@ -24,10 +27,8 @@
     fileTypesPhp: "module,install,inc,test"
   editor:
     fontFamily: "Menlo"
-    fontSize: 18
     invisibles: {}
     showIndentGuide: true
-    softWrapAtPreferredLineLength: true
   "go-plus":
     goPath: "/Users/aross/Projects/go"
   minimap:
@@ -38,9 +39,6 @@
       cursorlineDecorationsZIndex: 0
       "find-and-replace": true
       "find-and-replaceDecorationsZIndex": 0
-    panelDisplayMode: "closed"
-  "linter-eslint":
-    useGlobalEslint: true
   "release-notes":
     viewedVersion: "0.89.0"
   "spell-check":

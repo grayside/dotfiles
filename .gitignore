@@ -13,3 +13,5 @@ vim/vim.symlink/autoload/
 vim/vim.symlink/plugged/
 #
 git/gitconfig.local.symlink
+#
+caches
