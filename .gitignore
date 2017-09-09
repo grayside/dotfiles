@@ -6,8 +6,10 @@ atom/atom.symlink/compile-cache/
 atom/atom.symlink/packages
 atom/atom.symlink/storage
 atom/atom.symlink/themes
-atom.symlink/blob-store
-atom.symlink/recovery
+atom/atom.symlink/blob-store
+atom/atom.symlink/recovery
+atom/atom.symlink/git-time-machine
+atom/atom.symlink/split-diff
 #
 vim/vim.symlink/autoload/
 vim/vim.symlink/plugged/
