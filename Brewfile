@@ -101,6 +101,7 @@ cask 'the-unarchiver'
 cask 'vagrant'
 cask 'virtualbox'
 cask 'vlc'
+cask 'flux'
 
 # Productivity
 cask 'alfred'
