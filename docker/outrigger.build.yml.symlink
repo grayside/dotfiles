@@ -1,0 +1,4 @@
+cli:
+  volumes:
+    - ~/.gitconfig:/root/.gitconfig
+    - ~/.gitconfig.local:/root/.gitconfig.local
