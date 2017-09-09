@@ -1,0 +1,9 @@
+#!/bin/sh
+##
+# Identify all Chrome Extensions by name.
+#
+##
+cat /Users/aross/Library/Application\ Support/Google/Chrome/Default/Extensions/*/*/manifest.json  | jq .name
+
+_locales/en/messages.json
+__MSG_appName__
