@@ -18,12 +18,7 @@ fi
 
 if [[ "$SHELL" == "$binroot/zsh"]]; then
 # Ensure antigen is available.
-source $(brew --prefix)/share/antigen.zsh
+source $(brew --prefix)/share/antigen/antigen.zsh
+antigen init ~/.antigenrc
 
-# Install zsh plugins
-antigen bundles <<EOBUNDLES
-  # Guess what to install when running an unknown command.
-  command-not-found
-  zsh-users/zsh-syntax-highlighting
-EOBUNDLES
-fi
+rsync --exclude ".DS_Store" --exclude="README.md" -av --no-perms ../fonts/ ~/Library/Fonts/

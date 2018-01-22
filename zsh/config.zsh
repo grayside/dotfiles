@@ -15,7 +15,8 @@ setopt NO_LIST_BEEP
 setopt LOCAL_OPTIONS # allow functions to have local options
 setopt LOCAL_TRAPS # allow functions to have local traps
 setopt HIST_VERIFY
-setopt SHARE_HISTORY # share history between sessions ???
+# Sharing history across sessions makes it impossible to multi-task simply.
+#setopt SHARE_HISTORY # share history between sessions ???
 setopt EXTENDED_HISTORY # add timestamps to history
 setopt PROMPT_SUBST
 setopt CORRECT
@@ -38,4 +39,20 @@ bindkey '^[[5C' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^?' backward-delete-char
 
-source $(brew --prefix)/share/antigen.zsh
+source $(brew --prefix)/share/antigen/antigen.zsh
+antigen init ~/.antigenrc
+#source $(brew --prefix autoenv)/activate.sh
+
+# Overrides the `cd` builtin to store every path visited.
+# @see https://github.com/joshhornby/dotfiles/blob/master/zsh/config.zsh#L7
+function cd {
+    builtin cd $@
+    echo $OLDPWD > ~/.last_dir
+#    autoenv_init
+}
+
+# Restore last saved path when a new tab or browsing session loads.
+# May have some unexpected behaviors when `cd` is used in a script.
+if [ -f ~/.last_dir ]
+    then cd `cat ~/.last_dir`
+fi

@@ -39,3 +39,4 @@ do
 done
 
 unset config_files
+export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
