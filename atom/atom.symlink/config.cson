@@ -1,15 +1,25 @@
 "*":
+  "":
+    js:
+      jsx:
+        react:
+          source:
+            editor:
+              autoIndent: true
+              autoIndentOnPaste: false
   "atom-beautify":
     css:
       beautify_on_save: true
+    general:
+      _analyticsUserId: "18120271-8dd4-4e7f-870c-66029ac20977"
     html:
-      beautify_on_save: true
+      beautify_on_save: false
     js:
       disabled: true
     jsx:
       disabled: true
     markdown:
-      beautify_on_save: true
+      beautify_on_save: false
     nginx:
       beautify_on_save: true
   "autocomplete-modules":
@@ -34,14 +44,11 @@
       "vendor"
     ]
     telemetryConsent: "limited"
-    themes: [
-      "one-light-ui"
-      "one-light-syntax"
-    ]
   drupal:
     fileTypesPhp: "module,install,inc,test"
   editor:
     fontFamily: "Menlo"
+    fontSize: 15
     invisibles: {}
     showIndentGuide: true
   "go-plus":
@@ -52,10 +59,6 @@
     test: {}
   "linter-ui-default":
     panelHeight: 301
-  nuclide:
-    "atom-ide-code-format":
-      formatOnType: false
-    "nuclide-flow": {}
   minimap:
     plugins:
       bookmarks: true
@@ -64,6 +67,10 @@
       cursorlineDecorationsZIndex: 0
       "find-and-replace": true
       "find-and-replaceDecorationsZIndex": 0
+  nuclide:
+    "atom-ide-code-format":
+      formatOnType: false
+    "nuclide-flow": {}
   "prettier-atom":
     formatOnSaveOptions:
       enabled: true
@@ -86,7 +93,3 @@
     formatOnSave: true
   welcome:
     showOnStartup: false
-  ".js.jsx.react.source":
-    editor:
-      autoIndent: true
-      autoIndentOnPaste: false
